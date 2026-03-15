@@ -1,4 +1,7 @@
 {
     "name": "github.com/dach-trier/homepage",
-    "private": true
+    "private": true,
+    "dependencies": {
+        "sass": "^1.98.0"
+    }
 }
