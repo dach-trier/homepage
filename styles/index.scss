@@ -1,0 +1,64 @@
+@use "_variables.scss" as *;
+
+.header {
+    height: 40px;
+}
+
+.hero {
+    max-width: 500px;
+    margin-top: 40px;
+    display: grid;
+}
+
+.hero__logo {
+    width: 175px;
+}
+
+.hero__heading {
+    margin-top: 40px;
+
+    font-size: $text-4xl;
+    font-weight: 700;
+}
+
+.hero__slogan {
+    margin-top: 30px;
+    font-size: $text-xl;
+    line-height: 32px;
+}
+
+.hero__controls {
+    margin-top: 40px;
+    display: flex;
+    gap: 50px;
+}
+
+.hero__button {
+    height: 40px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero__button__icon {
+    aspect-ratio: 1/1;
+    fill: white;
+}
+
+.hero__button__label {
+    color: white;
+    font-weight: 500;
+}
+
+.hero__contact__button__icon {
+    position: relative;
+    bottom: 1px;
+    width: 16px;
+}
+
+.hero__donate__button__icon {
+    width: 18px;
+}
+
