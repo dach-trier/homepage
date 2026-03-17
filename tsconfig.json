@@ -2,9 +2,10 @@
     "compilerOptions": {
         // Modern browsers support all ES6 features, so ES6 is a good choice
         "target": "es6",
+        "module": "nodenext",
 
-        "baseUrl": "./",
-        "paths": {},
+        "baseUrl": ".",
+        "paths": { "@client/*": ["./client/*"] },
 
         "strict": true,
         "alwaysStrict": true,
@@ -26,5 +27,5 @@
         "useDefineForClassFields": true,
         "experimentalDecorators": false
     },
-    "include": ["**/*"]
+    "include": ["client/**/*"]
 }
