@@ -2,6 +2,7 @@ node_modules/
 
 static/*.css
 static/*.css.map
+static/*.js
 
 # vendor folder is used for local backups just in case.
 # no need to flood the remote repo.
