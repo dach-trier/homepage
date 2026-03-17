@@ -65,7 +65,7 @@
     // prettier-ignore
     &::after { background-color: $color-red-700; }
 
-    &:hover {
+    body.hasHover &:hover {
         background-color: $color-red-700;
         // prettier-ignore
         &::after { background-color: $color-red-800; }
@@ -77,7 +77,7 @@
     // prettier-ignore
     &::after { background-color: $color-blue-700; }
 
-    &:hover {
+    body.hasHover &:hover {
         background-color: $color-blue-700;
         // prettier-ignore
         &::after { background-color: $color-blue-800; }

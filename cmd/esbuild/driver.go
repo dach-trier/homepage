@@ -11,7 +11,7 @@ import (
 func main() {
 	res := esbuild.Build(
 		esbuild.BuildOptions{
-			EntryPoints: []string{},
+			EntryPoints: []string{"./client/index.ts"},
 			Bundle:      true,
 			Write:       true,
 			Outdir:      "static",
