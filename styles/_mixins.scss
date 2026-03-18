@@ -1,0 +1,26 @@
+@use "_variables.scss" as *;
+
+//
+// Breakpoints
+//
+
+$_breakpoints: (
+    xs: 360px,
+    sm: 640px,
+    md: 768px,
+);
+
+@mixin break($breakpoint) {
+    @if $breakpoint == xxs {
+        @content;
+    }
+    @else if map-has-key($_breakpoints, $breakpoint) {
+        $min-width: map-get($_breakpoints, $breakpoint);
+        @media screen and (min-width: $min-width) {
+            @content;
+        }
+    }
+    @else {
+        @error "Invalid breakpoint: #{$breakpoint}.";
+    }
+}
