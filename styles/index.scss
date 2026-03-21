@@ -1,8 +1,8 @@
+@use "index/_focus.scss";
 @use "index/_footer.scss";
 @use "index/_header.scss";
 @use "index/_hero.scss";
 @use "index/_highlights.scss";
-@use "index/_priorities.scss";
 
 body {
     display: flex;
@@ -20,8 +20,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
-    gap: 100px;
 }
 
 footer {

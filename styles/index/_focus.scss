@@ -1,0 +1,164 @@
+@use "../_prelude.scss" as *;
+
+.focus {
+    @include page-container;
+
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.focus__heading {
+    font-weight: 600;
+    font-size: $text-2xl;
+    text-align: left;
+}
+
+.focus__card__container {
+    @include page-container;
+
+    width:   100%;
+    display: grid;
+    gap:     40px;
+
+    @include break(xxs) {
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    @include break(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.focus__card {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+    padding: 24px;
+    border: 1px solid $color-gray-200;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    @include rounded;
+
+    $shift: 20%;
+
+    &:nth-child(2n + 1) {
+        text-align: left;
+
+        @include break(xxs) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include break(sm) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &:nth-child(2n) {
+        @include break(xxs) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include break(sm) {
+            flex-direction: row;
+            align-items: center;
+
+            justify-self: end;
+        }
+    }
+}
+
+.focus__card__icon__container {
+    $size: 112px;
+
+    width:      $size;
+    min-width:  $size;
+    height:     $size;
+    min-height: $size;
+
+    @include rounded;
+    border: 1px solid $color-gray-200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.focus__card__icon {
+    width: 80px;
+}
+
+.focus__card__text {
+    width: fit-content;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.focus__card__text__strong {
+    font-size: $text-xl;
+    font-weight: 600;
+}
+
+.focus__card__text__paragraph {
+    font-size: $text-lg;
+    line-height: 32px;
+}
+
+/**
+ * priorities:education
+ */
+
+.education__focus__card__icon__container {
+    background-color: $color-green-100;
+}
+
+.education__focus__card__icon {
+    fill: $color-green-500;
+}
+
+/**
+ * priorities:support
+ */
+
+.support__focus__card__icon__container {
+    background-color: $color-amber-100;
+}
+
+.support__focus__card__icon {
+    fill: $color-amber-500;
+}
+
+/**
+ * priorities:connection
+ */
+
+.connection__focus__card__icon__container {
+    background-color: $color-blue-100;
+}
+
+.connection__focus__card__icon {
+    fill: $color-blue-500;
+}
+
+/**
+ * priorities:understanding
+ */
+
+.understanding__focus__card__icon__container {
+    background-color: $color-red-100;
+}
+
+.understanding__focus__card__icon {
+    fill: $color-red-500;
+}
