@@ -1,3 +1,44 @@
+@use "../_prelude.scss" as *;
+
 .header {
-    height: 40px;
+    position: sticky !important;
+    z-index: 1000;
+    float: left;
+    top: 0 !important;
+
+    width: 100vw;
+    height: 58px;
+
+    background: white;
+}
+
+.header__container {
+    @include page-container;
+    height:  100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//
+// header::organization
+//
+
+.header__organization {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.header__organization__logo {
+    width: 32px;
+}
+
+.header__organization__name {
+    position: relative;
+    top: 1px;
+
+    font-weight: 600;
 }

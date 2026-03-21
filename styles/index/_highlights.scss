@@ -1,0 +1,110 @@
+@use "../_prelude.scss" as *;
+
+$_animation-duration: 0.5s;
+
+.highlights {
+    overflow: hidden;
+
+    @include break(xxs) {
+        position: sticky;
+        z-index: -1;
+
+        // if the layout breaks, this is probably why.
+        //
+        // MUST match the header height.
+        top: 58px;
+
+        max-width: 1200px;
+        width: 100%;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    @include break(xl) {
+        @include  rounded;
+        position: relative;
+        top:      0;
+        height:   400px;
+    }
+}
+
+//
+// highlight::image
+//
+
+
+.highlight__image__container {
+    width: 100%;
+    height: 100%;
+}
+
+.highlight__image {
+    object-fit: cover;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    @include break(xxs) {
+        border-radius: 0;
+    }
+
+    transition: opacity $_animation-duration ease-in-out;
+}
+
+.highlight__image[data-state="active"] {
+    position: static;
+    opacity: 1;
+}
+
+.highlight__image[data-state="inactive"] {
+    position: absolute;
+    opacity: 0;
+}
+
+// highlight::overlay
+
+.highlight__overlay {
+    @include absolute-container;
+    top:     24px;
+    bottom:  24px;
+
+    display: grid;
+    grid-template-rows:    repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+// highlight::label
+
+.highlight__label__container {
+    position:    relative;
+    grid-row:    2;
+    grid-column: 1;
+    align-self:  end;
+}
+
+.highlight__label {
+    position: absolute;
+    bottom: 0;
+
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-size: $text-2xl;
+    font-weight: 600;
+
+    transition: opacity $_animation-duration ease-in-out;
+}
+
+.highlight__label[data-state="active"] {
+    opacity: 1;
+}
+
+.highlight__label[data-state="inactive"] {
+    opacity: 0;
+}

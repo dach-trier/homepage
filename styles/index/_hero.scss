@@ -3,17 +3,107 @@
 .hero {
     @include page-container;
 
+    margin-top: 32px;
+
     display: flex;
-    gap: 80px;
 
     @include break(xxs) {
         flex-direction: column;
+        gap: 20px;
     }
 
     @include break(md) {
         flex-direction: row;
         justify-content: space-between;
-        align-items: stretch;
+        align-items: flex-start;
         gap: 40px;
     }
+}
+
+.hero__strong {
+    font-size: $text-2xl;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.hero__paragraph {
+    font-size: $text-lg;
+    line-height: 32px;
+
+    > strong {
+        font-size: calc($text-lg + 1px);
+        font-weight: 500;
+    }
+}
+
+.hero__button__container {
+    display: flex;
+    gap: 40px;
+
+    @include break(xxs) {
+        margin-top: 20px;
+    }
+
+    @include break(md) {
+        margin-top: 0;
+    }
+}
+
+@mixin hero__button($color) {
+    @include button($color);
+
+    height: 40px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@mixin hero__button__icon($size) {
+    aspect-ration: 1 / 1;
+
+    fill: white;
+    width: $size;
+}
+
+@mixin hero__button__label {
+    font-weight: 500;
+
+    color: white;
+}
+
+/**
+ * hero:contact-button
+ */
+
+.hero__contact__button {
+    @include hero__button($color: blue);
+}
+
+.hero__contact__button__icon {
+    @include hero__button__icon($size: 16px);
+
+    position: relative;
+    bottom: 1px;
+}
+
+.hero__contact__button__label {
+    @include hero__button__label;
+}
+
+/**
+ * hero:donate-button
+ */
+
+.hero__donate__button {
+    @include hero__button($color: red);
+}
+
+.hero__donate__button__icon {
+    @include hero__button__icon($size: 18px);
+}
+
+.hero__donate__button__label {
+    @include hero__button__label;
 }

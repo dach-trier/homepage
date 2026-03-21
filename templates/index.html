@@ -13,128 +13,90 @@
     </head>
     <body>
         <header class="header">
-            <!--
             <div class="header__container">
-                <div class="header__left">
-                    <img class="header__logo" src="static/images/dach-logo.svg">
-                    <label class="header__label">DACH e.V. Trier</label>
-                </div>
+                <div class="header__organization">
+                    <img class="header__organization__logo"
+                           src="static/images/dach-logo.svg">
 
-                <div class="header__center">
-                </div>
-
-                <div class="header__right">
+                    <strong class="header__organization__name">
+                        DACH e.V. Trier
+                    </strong>
                 </div>
             </div>
-            -->
         </header>
 
+        <section class="highlights">
+            <div class="highlight__image__container">
+                <!-- must be in the same order as captions (see below) -->
+
+                <img class="highlight__image" data-state="active"   src="static/images/walzer.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/art.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/theater.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/gala.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/krzyzowa.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/band.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/camp.jpg" />
+                <img class="highlight__image" data-state="inactive" src="static/images/bereginja.jpg" />
+            </div>
+
+            <div class="highlight__overlay">
+                <div class="highlight__label__container">
+                    <!-- must be in the same order as images (see above) -->
+
+                    <label class="highlight__label" data-state="active">Walzer</label>
+                    <label class="highlight__label" data-state="inactive">Art</label>
+                    <label class="highlight__label" data-state="inactive">Theater</label>
+                    <label class="highlight__label" data-state="inactive">Gala Konzert</label>
+                    <label class="highlight__label" data-state="inactive">Krzuzowa</label>
+                    <label class="highlight__label" data-state="inactive">Band</label>
+                    <label class="highlight__label" data-state="inactive">Camp</label>
+                    <label class="highlight__label" data-state="inactive">Bereginja</label>
+                </div>
+            </div>
+
+            <script>
+                Highlights(me())
+            </script>
+        </section>
+
         <main class="main">
-            <section class="hero block">
-                <div class="banner">
-                    <img
-                        class="banner__logo"
-                        src="static/images/dach-logo.svg"
-                    >
+            <section class="hero">
+                <strong class="hero__strong">
+                    Українсько-німецьке об'єднання
+                </strong>
 
-                    <h1 class="banner__heading">
-                        DACH e.V. Trier
-                    </h1>
+                <p class="hero__paragraph">
+                    у березні 2023
+                    <strong>зареєстрованo благодійною організацюєю</strong>
+                    , що на сьогоднішній день налічує
+                    <strong>більше 60 членів</strong>.
+                    За період існування
+                    <strong>реалізовано більше 100 проєктів</strong>
+                    різного масштабу.
+                </p>
 
-                    <p class="banner__slogan">
-                        Культурний простір об'єднання та інтеграції зростаючого
-                        покоління
-                    </p>
+                <div class="hero__button__container">
+                    <button class="hero__contact__button">
+                        <svg class="hero__contact__button__icon">
+                            <use xlink:href="static/icons.svg#phone" />
+                        </svg>
 
-                    <div class="banner__button__container">
-                        <button class="banner__contact__button">
-                            <svg class="banner__contact__button__icon">
-                                <use xlink:href="static/icons.svg#phone" />
-                            </svg>
+                        <label class="hero__contact__button__label">
+                            Contact
+                        </label>
+                    </button>
 
-                            <label class="banner__contact__button__label">
-                                Contact
-                            </label>
-                        </button>
+                    <button class="hero__donate__button">
+                        <svg class="hero__donate__button__icon">
+                            <use xlink:href="static/icons.svg#heart" />
+                        </svg>
 
-                        <button class="banner__donate__button">
-                            <svg class="banner__donate__button__icon">
-                                <use xlink:href="static/icons.svg#heart" />
-                            </svg>
-
-                            <label class="banner__donate__button__label">
-                                Donate
-                            </label>
-                        </button>
-                    </div>
+                        <label class="hero__donate__button__label">
+                            Donate
+                        </label>
+                    </button>
                 </div>
 
-                <div class="archive__carousel">
-                    <div class="archive__carousel__slide__stack">
-                        <div class="archive__carousel__slide archive__carousel__slide--active">
-                            <img class="archive__carousel__slide__background" src="static/images/walzer.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Walzer</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/art.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Art</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/theater.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Theater</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/gala.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Gala</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/krzyzowa.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Krzyzowa</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/band.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Band</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/camp.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Camp</h1>
-                        </div>
-
-                        <div class="archive__carousel__slide">
-                            <img class="archive__carousel__slide__background" src="static/images/bereginja.jpg" />
-                            <h1  class="archive__carousel__slide__heading">Bereginja</h1>
-                        </div>
-                    </div>
-
-                    <div class="archive__carousel__control__group">
-                        <button class="archive__carousel__control archive__carousel__control__prev">
-                            <svg class="archive__carousel__control__icon">
-                                <use xlink:href="static/icons.svg#left-arrow" />
-                            </svg>
-                        </button>
-                        <button class="archive__carousel__control archive__carousel__control__next">
-                            <svg class="archive__carousel__control__icon">
-                                <use xlink:href="static/icons.svg#right-arrow" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="archive__carousel__timer__container">
-                        <span class="archive__carousel__timer__bar">
-                            <span class="archive__carousel__timer"></span>
-                        </span>
-                    </div>
-
-                    <script>
-                        ArchiveCarousel(me())
-                    </script>
-                </div>
             </section>
 
             <section class="priority__card__container block">
