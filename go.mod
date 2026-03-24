@@ -1,4 +1,4 @@
-module github.com/dach-trier/homepage
+module dach-trier.com
 
 go 1.26.1
 
