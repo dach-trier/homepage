@@ -50,3 +50,12 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+
+@utility absolute-container {
+    position: absolute;
+    width: calc(100% - 42px);
+    max-width: 1200px;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
