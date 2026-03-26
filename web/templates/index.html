@@ -31,7 +31,7 @@
                 <img class="{{$highlightImage}}" data-state="inactive" src="assets/images/krzyzowa.jpg" />
                 <img class="{{$highlightImage}}" data-state="inactive" src="assets/images/band.jpg" />
                 <img class="{{$highlightImage}}" data-state="inactive" src="assets/images/camp.jpg" />
-                <img class="{{$highlightImage}}" data-state="inactive" src="assets/images/bereginja.jpg" />
+                <img class="{{$highlightImage}}" data-state="inactive" src="assets/images/bereginja-first-day.jpg" />
             </div>
 
             <div class="absolute-container bottom-6 grid grid-rows-2 grid-cols-2">
@@ -223,9 +223,82 @@
                     </div>
                 </div>
             </section>
+
+            <section class="mt-25 page-container ">
+                <strong class="text-2xl">
+                    Проекти
+                </strong>
+
+                <!-- Bereginja -->
+                <div class="mt-5">
+                    <!-- Hero -->
+                    <div class="flex flex-col md:flex-row items-start justify-start gap-5 md:gap-10">
+                        <img class="w-full md:w-[45%] h-[300px] flex-none rounded object-cover" src="assets/images/bereginja-kids.jpg" />
+
+                        <div class="flex flex-col gap-5">
+                            <strong class="text-2xl leading-9 md:leading-11">
+                                Перша українська школа у Трірі &mdash; Берегиня
+                            </strong>
+
+                            <p class="text-lg">
+                                Освітньо-культурний центр для українських дітей та молоді
+                                в Німеччині віком від 5 до 17 років.
+                                <br /> <br />
+                                Наразі у школі навчаються <strong>36 дітей</strong>
+                                у 2 підготовчих групах та 6 класаx. <strong>8 досвідчених волонтерів-викладачів</strong>
+                                із педагогічною освітою навчають дітей та підлітків.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cards -->
+                    <div class="mt-5 grid grid-cols-3 gap-x-6">
+                        {{$card := "mt-5 flex flex-col gap-4 p-6 border border-gray-200 rounded"}}
+                        {{$heading := "text-xl"}}
+                        {{$list := "list-disc pl-[1em] flex flex-col gap-2"}}
+
+                        <div class="{{$card}}">
+                            <strong class="{{$heading}}">
+                                Освітня складова
+                            </strong>
+
+                            <ul class="{{$list}}">
+                                <li>Українська мова та література</li>
+                                <li>Математика та природничі науки</li>
+                                <li>Історія та культура України</li>
+                            </ul>
+                        </div>
+
+                        <div class="{{$card}}">
+                            <strong class="text-xl">
+                                Творчий розвиток
+                            </strong>
+
+                            <ul class="{{$list}}">
+                                <li>Музика, малювання, театральний гурток</li>
+                                <li>Творчі майстер-класи</li>
+                                <li>Святкування українських свят: Різдво, Великдень, День незалежності</li>
+                            </ul>
+                        </div>
+
+                        <div class="{{$card}}">
+                            <strong class="{{$heading}}">
+                                Соціальна підтримка
+                            </strong>
+
+                            <ul class="{{$list}}">
+                                <li>Психологічна підтримка</li>
+                                <li>Інтеграційні заходи</li>
+                                <li>Спілкування з однолітками у дружній атмосфері</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="mt-20">
+
             <div class="page-container flex flex-col gap-5 md:grid md:gap-y-5 md:gap-x-0">
                 <div class="w-full h-0.5 bg-black md:col-span-4"></div>
 
