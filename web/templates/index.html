@@ -420,6 +420,47 @@
                     Дивитися всі проєкти
                 </button>
             </section>
+
+            <section class="page-container mt-20 grid grid-cols-1 md:grid-cols-[3fr_4fr] gap-8 md:gap-20">
+                <div class="flex flex-col gap-5">
+                    <h1 class="font-semibold text-2xl">
+                        Get in touch with us
+                    </h1>
+
+                    <p class="text-lg leading-8">
+                        Have questions? Either
+                        fill up the form on the right or
+                        send an email to info@dach-trier.com
+                    </p>
+                </div>
+
+                <form class="grid grid-cols-2 gap-4">
+                    {{$field := "flex flex-col justify-start items-start gap-1"}}
+                    {{$input := "w-full h-full rounded border border-gray-200 py-1.5 px-2 outline-none placeholder:text-gray-400"}}
+
+                    <div class="{{$field}}">
+                        <input class="{{$input}}" placeholder="first name" />
+                    </div>
+
+                    <div class="{{$field}}">
+                        <input class="{{$input}}" placeholder="last name" />
+                    </div>
+
+                    <div class="{{$field}}">
+                        <input class="{{$input}}" placeholder="email" />
+                    </div>
+
+                    <div class="{{$field}}">
+                        <input class="{{$input}}" placeholder="phone number" />
+                    </div>
+
+                    <textarea class="{{$input}} col-span-2 min-h-[100px]" placeholder="message"></textarea>
+
+                    <button type="button" class="button-blue-600 mt-4 px-3 py-1 w-fit col-span-2">
+                        Send
+                    </button>
+                </form>
+            </section>
         </main>
 
         <footer class="mt-20">
