@@ -364,11 +364,11 @@
 
                 {{$project        := "w-full h-auto flex flex-col items-start justify-start gap-5"}}
                 {{$projectImage   := "w-full h-[270px] object-cover rounded"}}
-                {{$projectHeading := "text-2xl leading-9 mx-2"}}
-                {{$projectContent := "list-disc text-lg pl-[1rem] mx-2 flex flex-col gap-6"}}
+                {{$projectHeading := "text-2xl leading-9 md:mx-2"}}
+                {{$projectContent := "list-disc text-lg pl-[1rem] md:mx-2 flex flex-col gap-6"}}
 
                 <!-- Other -->
-                <div class="mt-20 grid grid-cols-2 gap-x-20">
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-20">
                     <!-- Walzer -->
                     <div class="{{$project}}">
                         <img class="{{$projectImage}}" src="assets/images/walzer-2.jpg" />
@@ -386,6 +386,31 @@
 
                             <li>
                                 співпраця з BigBand Gymnasium Konz та Music Color Orchestra
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Art Workshop -->
+                    <div class="{{$project}}">
+                        <img class="{{$projectImage}}" src="assets/images/art-2.jpg" />
+
+                        <strong class="{{$projectHeading}}">
+                            Арт Майстерня
+                        </strong>
+
+                        <ul class="{{$projectContent}}">
+                            <li>
+                                Без правил та оцінок: 
+                                Ми не вчимо «правильно» малювати. Ми вчимо
+                                прислухатися до себе і дозволяти образам виникати зсередини,
+                                керуючись інтуїцією.
+                            </li>
+
+                            <li>
+                                Дозвіл на всі емоції:
+                                На полотні можна все — і радість, і сум, і гнів, і
+                                спокій. Це спосіб дати видиме вираження
+                                своєму внутрішньому світу.
                             </li>
                         </ul>
                     </div>
