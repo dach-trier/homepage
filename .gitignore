@@ -1,6 +1,7 @@
 bin/.tailwind
 
-web/assets/styles/bundle.css
+# generated styles, scripts, and remote assets
+web/assets/*
 
 # vendor folder is used for local backups just in case.
 # no need to flood the remote repo.

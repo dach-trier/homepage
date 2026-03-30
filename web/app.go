@@ -21,17 +21,10 @@ func (app *App) Router() http.Handler {
 	router := chi.NewRouter()
 	router.Use(chi_middleware.Logger)
 
-	// images
-
-	fs := http.FileServer(http.Dir("web/assets/images"))
-	router.Get("/assets/images/*", http.StripPrefix("/assets/images/", fs).ServeHTTP)
-
 	// assets
 
-	router.Get("/favicon.ico", app.serveTabIcon)
-	router.Get("/assets/graphics/dach-flat.svg", app.serveFlatLogo)
-	router.Get("/assets/graphics/dach.svg", app.serveDetailedLogo)
-	router.Get("/assets/styles/bundle.css", app.serveStyleBundle)
+	fs := http.FileServer(http.Dir("web/assets/"))
+	router.Get("/assets/*", http.StripPrefix("/assets/", fs).ServeHTTP)
 
 	// pages
 
@@ -39,22 +32,6 @@ func (app *App) Router() http.Handler {
 	router.NotFound(app.serveNotFoundPage)
 
 	return router
-}
-
-func (app *App) serveTabIcon(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "web/assets/favicon.ico")
-}
-
-func (app *App) serveDetailedLogo(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "web/assets/graphics/dach.svg")
-}
-
-func (app *App) serveFlatLogo(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "web/assets/graphics/dach-flat.svg")
-}
-
-func (app *App) serveStyleBundle(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "web/assets/styles/bundle.css")
 }
 
 func (app *App) serveIndexPage(w http.ResponseWriter, r *http.Request) {
