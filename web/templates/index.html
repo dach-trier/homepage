@@ -31,9 +31,22 @@
 
 {{define "index.banner"}}
 <section class="w-full h-[250px] xl:h-[400px] xl:rounded overflow-hidden">
-    <div class="relative w-full h-full">
-        {{range .Events}}
-        <div class="absolute top-0 left-0 w-full h-full">
+    <div
+        class="relative w-full h-full"
+        x-data="{ activeSlide: 0 }"
+        x-init="setInterval(() => activeSlide = (activeSlide + 1) % {{len .Events}}, 5000)"
+    >
+        {{range $index, $event := .Events}}
+        <div
+            class="absolute top-0 left-0 w-full h-full"
+            x-show="activeSlide === {{$index}}"
+            x-transition:enter="transition ease-out duration-500"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+        >
             <img
                 class="absolute top-0 left-0 w-full h-full object-cover"
                 src="{{.Preview.URL}}"
