@@ -24,6 +24,8 @@ func (b *Bundle) AddTranslation(lang language.Tag, id string, translation string
 		return ErrTranslationDuplicate{Lang: lang, Id: id}
 	}
 
+	b.translations[lang][id] = translation
+
 	return nil
 }
 
@@ -38,7 +40,11 @@ func (b *Bundle) loadRawTranslations(lang language.Tag, parentId string, raw any
 	switch value := raw.(type) {
 	case map[string]any:
 		for id, child := range value {
-			err := b.loadRawTranslations(lang, parentId+"."+id, child)
+			nextId := id
+			if len(parentId) > 0 {
+				nextId = parentId + "." + id
+			}
+			err := b.loadRawTranslations(lang, nextId, child)
 
 			if err != nil {
 				return err
